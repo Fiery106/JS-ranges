@@ -4,13 +4,105 @@
         <title>
             Karakterkalkulator
         </title>
+
+
+        <style>
+            form {
+                padding: 20px 10px;
+            }
+
+            input {
+                padding: 4px;
+                margin: 0 4px;
+                width: 100px;
+                text-align: center;
+            }
+        </style>
     </head>
 
 
 
     <body>
+        <h1>
+            THE LORAX
+        </h1>
+        <em>
+            he speaks for the trees
+        </em>
+
+
+        <form id="scores" action="">
+            <label>
+                Oppgave 1
+            </label>
+            <input type="number" name="tasks" id="oppgave_1" value="" min="0" max="100" placeholder="0-100" required /> <br>
+
+            <label>
+                Oppgave 2
+            </label>
+            <input type="number" name="tasks" id="oppgave_2" value="" min="0" max="100" placeholder="0-100" required /> <br>
+
+            <label>
+                Oppgave 3
+            </label>
+            <input type="number" name="tasks" id="oppgave_3" value="" min="0" max="100" placeholder="0-100" required /> <br>
+
+            <label>
+                Oppgave 4
+            </label>
+            <input type="number" name="tasks" id="oppgave_4" value="" min="0" max="100" placeholder="0-100" required /> <br>
+
+            <label>
+                Oppgave 5
+            </label>
+            <input type="number" name="tasks" id="oppgave_5" value="" min="0" max="100" placeholder="0-100" required /> <br>
+
+            <label>
+                Oppgave 6
+            </label>
+            <input type="number" name="tasks" id="oppgave_6" value="" min="0" max="100" placeholder="0-100" required /> <br>
+
+
+            <input type="button" value="Sjekk" onclick="getScore()" />
+        </form>
+
+        <p id="output"></p>
+
+
         <script>
-            
+            let output = document.getElementById("output");
+
+
+            function getScore() {
+                let scores = document.getElementsByName("tasks");
+                let x = 0;
+
+                for (i = 0; i < scores.length; i++) {
+                    x += Number(scores[i].value);
+                    console.log(i)
+                }
+                x = Math.round(x / scores.length)
+
+                output.innerHTML = `Studenten fikk ${x.toFixed(2)} i snitt. Dette tilsvarer karakteren ${getGrade(x)}.`
+            }
+
+
+            function getGrade(y) {
+                if (y > 90) {
+                    console.log(y)
+                    return "A"
+                } else if (y > 70) {
+                    return "B"
+                } else if (y > 50) {
+                    return "C"
+                } else if (y > 30) {
+                    return "D"
+                } else if (y > 10) {
+                    return "E"
+                } else {
+                    return "F"
+                }
+            }
         </script>
     </body>
 </html>
