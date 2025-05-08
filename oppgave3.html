@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Radioknappvalg
+        </title>
+    </head>
+
+
+
+    <body>
+        <h1>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis eveniet accusamus consequatur.
+        </h1>
+
+
+        <div>
+            <label>
+                Rød
+            </label>
+            <input type="radio" name="farge" id="rød" value="rød" checked onclick="colorFunc()"/>
+            
+            <label>
+                Grønn
+            </label>
+            <input type="radio" name="farge" id="grønn" value="grønn" checked onclick="colorFunc()"/>
+           
+            <label>
+                Blå
+            </label>
+            <input type="radio" name="farge" id="blå" value="blå" checked onclick="colorFunc()"/>
+        </div>
+
+        <p id="output"></p>
+
+
+        <script>
+            let output = document.getElementById("output");
+
+            let rød = document.getElementById("rød");
+            let grønn = document.getElementById("grønn");
+            let blå = document.getElementById("blå");
+
+
+            function colorFunc() {
+                if (rød.checked) {
+                    output.innerHTML = `Du valgte ${rød.value}!` 
+                } else if (grønn.checked) {
+                    output.innerHTML = `Du valgte ${grønn.value}!` 
+                } else { //blå
+                    output.innerHTML = `Du valgte ${blå.value}!` 
+            }
+        }
+
+        </script>
+    </body>
+</html>
