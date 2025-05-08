@@ -81,7 +81,7 @@
                     x += Number(scores[i].value);
                     console.log(i)
                 }
-                x = Math.round(x / scores.length)
+                x = (x / scores.length)
 
                 output.innerHTML = `Studenten fikk ${x.toFixed(2)} i snitt. Dette tilsvarer karakteren ${getGrade(x)}.`
             }
