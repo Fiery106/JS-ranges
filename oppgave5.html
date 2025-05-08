@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Avmerkingsbokser og handleliste
+        </title>
+    </head>
+
+
+
+    <body>
+        <h1>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea vero minima beatae neque, sint sit nesciunt aut, illum, temporibus officiis accusantium eveniet praesentium molestias veniam fuga autem animi quasi quibusdam iure fugiat. Cupiditate.
+        </h1>
+
+
+        <div>
+            <div> <!-- hentet fra https://iform.nu/sunn-mat/ti-frukter-som-er-slankende -->
+                <label>
+                    honningmelon
+                </label>
+                <input type="checkbox" name="box" id="honningmelon" value="honningmelon" /> <br>
+
+                <label>
+                    cantaloupemelon
+                </label>
+                <input type="checkbox" name="box" id="cantaloupemelon" value="cantaloupemelon" /> <br>
+
+                <label>
+                    aprikos
+                </label>
+                <input type="checkbox" name="box" id="aprikos" value="aprikos" /> <br>
+
+                <label>
+                    jordbær
+                </label>
+                <input type="checkbox" name="box" id="jordbær" value="jordbær" /> <br>
+
+                <label>
+                    grapefrukt
+                </label>
+                <input type="checkbox" name="box" id="grapefrukt" value="grapefrukt" /> <br>
+
+                <label>
+                    bringebær
+                </label>
+                <input type="checkbox" name="box" id="bringebær" value="bringebær" /> <br>
+
+                <label>
+                    plomme
+                </label>
+                <input type="checkbox" name="box" id="plomme" value="plomme" /> <br>
+
+                <label>
+                    pære
+                </label>
+                <input type="checkbox" name="box" id="pære" value="pære" /> <br>
+
+                <label>
+                    blåbær
+                </label>
+                <input type="checkbox" name="box" id="blåbær" value="blåbær" /> <br>
+
+                <label>
+                    eple
+                </label>
+                <input type="checkbox" name="box" id="eple" value="eple" /> <br>
+            </div>
+
+
+            <button onclick="writeList()">
+                Kjøp
+            </button>
+        </div>
+
+        <p id="output"></p>
+
+
+        <script>
+            let output = document.getElementById("output");
+
+
+            function writeList() {
+                let names = document.getElementsByName("box"); //vi henter alle elementer med samme navn med en array, fordi det blir lettere å gå gjennom hele listen ved bruk av for loopen for å se hva som er sjekket ut eller ikke
+                let x = "";
+
+                for (i = 0; i < names.length; i++) {
+                    console.log(names.length)
+                    if (names[i].checked) {
+                        x += `${names[i].value}`
+                        if (i != names.length) {
+                            x += ", "
+                            //hvordan kan man slette "," når for loopen er ferdig????
+                        } 
+                    }
+                
+                output.innerHTML = `Din handleliste er: ${x}`
+                }
+            }
+        </script>
+    </body>
+</html>
