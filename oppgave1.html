@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            If-setning (betingelse)
+        </title>
+    </head>
+
+
+
+    <body>
+        <h1>
+            Lorem ipsum dolor sit amet consectetur.
+        </h1>
+
+        <p id="output"></p>
+
+
+        <div>
+            <input type="text" id="username" />
+
+            <button onclick="myFunc()">
+                send
+            </button>
+        </div>
+
+
+
+        <script>
+            let output = document.getElementById("output");
+
+            function myFunc() {
+                let username = document.getElementById("username").value;
+
+                if (username) {
+                    output.innerHTML = `Hei, ${username}!`
+                } else {
+                    output.innerHTML = "Vennligst skriv inn navnet ditt."
+                }
+            }
+        </script>
+    </body>
+</html>
