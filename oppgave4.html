@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Slider
+        </title>
+    </head>
+
+
+
+    <body>
+        <h1>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, illo commodi consectetur aut beatae voluptas in amet veritatis? Dolores officiis enim porro!
+        </h1>
+
+
+        <div>
+            <div>
+                <label>
+                    Rød
+                </label>
+                <input type="range" min="0" max="255" value="255" id="rød" onchange="colorChange()" />
+            </div>
+            
+            <div>
+                <label>
+                    Grønn
+                </label>
+                <input type="range" min="0" max="255" value="255" id="grønn" onchange="colorChange()" />
+            </div>
+            
+            <div>
+                <label>
+                    Blå
+                </label>
+                <input type="range" min="0" max="255" value="255" id="blå" onchange="colorChange()" />
+            </div>
+        </div>
+
+
+        <script>
+            let rød = Number(document.getElementById("rød").value);
+            let grønn = Number(document.getElementById("grønn").value);
+            let blå = Number(document.getElementById("blå").value);
+
+
+            function colorChange() {
+                rød = Number(document.getElementById("rød").value);
+                grønn = Number(document.getElementById("grønn").value);
+                blå = Number(document.getElementById("blå").value);
+
+                document.body.style.background = `rgb(${rød}, ${grønn}, ${blå})`
+            }
+        </script>
+    </body>
+</html>
