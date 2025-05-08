@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Kalkulatorfunksjon
+        </title>
+    </head>
+
+
+
+    <body>
+        <h1>
+            Lorem ipsum dolor sit amet consectetur adipisicing.
+        </h1>
+
+        <p id="output"></p>
+
+
+        <div>
+            <input type="number" id="first_num" />
+
+            <select id="method">
+                <option>
+                    +
+                </option>
+                <option>
+                    -
+                </option>
+                <option>
+                    *
+                </option>
+                <option>
+                    /
+                </option>
+            </select>
+
+            <input type="number" id="second_num" />
+
+
+            <button onclick="writeMessage()">
+                send
+            </button>
+        </div>
+
+
+        <script>
+            let method = document.getElementById("method").value;
+            let output = document.getElementById("output");
+
+            let first_num = Number(document.getElementById("first_num").value);
+            let second_num = Number(document.getElementById("second_num").value);
+
+
+            function writeMessage() {
+                method = document.getElementById("method").value; //oppdatere verdien uten å laste inn nettsiden igjen
+
+                output.innerHTML = calcFunc(first_num, method, second_num)
+            }
+
+
+            function calcFunc(first, calc, second) {
+                if (method == "+") {
+                    return `${first} plus ${second} = ${first + second}`
+                } else if (method == "-") {
+                    return `${first} minus ${second} = ${first - second}`
+                } else if (method == "*") {
+                    return `${first} ganger ${second} = ${first * second}`
+                } else { // dele
+                    return `${first} deler ${second} = ${first / second}`
+                }
+            }
+        </script>
+    </body>
+</html>
