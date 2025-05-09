@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Lønnskalkulator med Validering
+        </title>
+    </head>
+
+
+
+    <body>
+        <h1>
+            lore
+        </h1>
+        
+        <div>
+            <label>
+                Timepris
+            </label>
+            <input type="number" id="work_cost" placeholder="123" required />
+
+            <label>
+                Arbeidtimer i uken
+            </label>
+            <input type="number" id="work_hours" placeholder="123" required />
+
+            <button onclick="calcCost()">
+                Send
+            </button>
+        </div>
+
+        <p id="output"></p>
+
+
+        <script>
+            let output = document.getElementById("output");
+
+
+            function calcCost() {
+                let work_cost = document.getElementById("work_cost").value;
+                let work_hours = document.getElementById("work_hours").value;
+
+                let x = work_cost * work_hours
+                if (work_cost > 0 && work_hours > 0) {
+                    output.innerHTML = `Din total lønn er ${x}kr hver uke og ${x * 12}kr hvert år`
+                } else {
+                    output.innerHTML = "Ugyldig tall verdi"
+                }
+                
+            }
+        </script>
+    </body>
+</html>
