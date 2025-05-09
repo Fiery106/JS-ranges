@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Enkel Valutaomregner
+        </title>
+    </head>
+
+
+
+    <body>
+        <h1>
+            .tema tis rolod muspi meroL
+        </h1>
+
+
+        <div>
+            <label>
+                Beløp
+            </label>
+            <input type="number" id="amount" placeholder="1234" required />
+            
+            <label>
+               
+            </label>
+            <select id="currency">
+                <option value="USD">
+                    USD
+                </option>
+                <option value="EUR">
+                    EUR
+                </option>
+                <option value="NOK">
+                    NOK
+                </option>
+            </select>
+
+            <button onclick="writeCost()">
+                Send
+            </button>
+        </div>
+
+        <p id="output"></p>
+
+
+        <script>
+            let output = document.getElementById("output");
+
+            function writeCost() {
+                //NOK: EUR = 11.69, USD = 10.39
+                //EUR: USD = 1.12
+                
+                let amount = document.getElementById("amount").value;
+                let currency = document.getElementById("currency").value;
+
+                
+                if (amount > 0) {
+                    output.innerHTML = `${amount}`
+                    if (currency == "NOK") {
+                        output.innerHTML += ` NOK er lik <br> 
+                        <ul>
+                            <li>
+                                ${(amount / 10.39).toFixed(2)} USD og 
+                            </li>
+                            <li>
+                                ${(amount / 11.69).toFixed(2)} EUR
+                            </li>
+                        </ul>`
+
+                    } else if (currency == "USD") {
+                        output.innerHTML += ` USD er lik <br> 
+                        <ul>
+                            <li>
+                                ${(amount * 10.39).toFixed(2)} NOK og 
+                            </li>
+                            <li>
+                                ${(amount / 1.12).toFixed(2)} EUR
+                            </li>
+                        </ul>`
+
+                    } else if (currency == "EUR") {
+                        output.innerHTML += ` EUR er lik <br> 
+                        <ul>
+                            <li>
+                                ${(amount * 11.69).toFixed(2)} USD og 
+                            </li>
+                            <li>
+                                ${(amount * 1.12).toFixed(2)} EUR
+                            </li>
+                        </ul>`
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
