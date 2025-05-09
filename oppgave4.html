@@ -20,6 +20,7 @@
                     Rød
                 </label>
                 <input type="range" min="0" max="255" value="255" id="rød" onchange="colorChange()" />
+                <p id="rødverdi"></p>
             </div>
             
             <div>
@@ -27,6 +28,7 @@
                     Grønn
                 </label>
                 <input type="range" min="0" max="255" value="255" id="grønn" onchange="colorChange()" />
+                <p id="grønnverdi"></p>
             </div>
             
             <div>
@@ -34,6 +36,7 @@
                     Blå
                 </label>
                 <input type="range" min="0" max="255" value="255" id="blå" onchange="colorChange()" />
+                <p id="blåverdi"></p>
             </div>
         </div>
 
@@ -43,11 +46,26 @@
             let grønn = Number(document.getElementById("grønn").value);
             let blå = Number(document.getElementById("blå").value);
 
+            let rødverdi = document.getElementById("rødverdi");
+            let grønnverdi = document.getElementById("grønnverdi");
+            let blåverdi = document.getElementById("blåverdi");
+
+
+            rødverdi.innerHTML = rød;
+            grønnverdi.innerHTML = grønn;
+            blåverdi.innerHTML = blå;
+
+            document.body.style.background = `rgb(${rød}, ${grønn}, ${blå})`
+
 
             function colorChange() {
                 rød = Number(document.getElementById("rød").value);
                 grønn = Number(document.getElementById("grønn").value);
                 blå = Number(document.getElementById("blå").value);
+
+                rødverdi.innerHTML = rød;
+                grønnverdi.innerHTML = grønn;
+                blåverdi.innerHTML = blå;
 
                 document.body.style.background = `rgb(${rød}, ${grønn}, ${blå})`
             }
